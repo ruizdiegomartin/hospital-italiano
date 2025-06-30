@@ -334,7 +334,8 @@ main {
 /* ------------------------- Footer ------------------------- */
 
 .advise-section {
-    margin-bottom: 50px;
+    margin: 0 10% 50px;
+
 }
 .footer-banner-wrapper {
     display: flex;
