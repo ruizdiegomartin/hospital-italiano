@@ -6,8 +6,13 @@
     font-size: 20px;
     color: #000000dc;
 }
+@media screen and (max-width: 480px) {
+    * {
+        font-size: 10px;
+    }
+}
 :root {
-    --primary-green: #A3CEB5;
+    --primary-green: #00913D;
     --secundary-green: #CEE3D6;
     --primary-blue: #5CA5CB;
     --secundary-blue: #BFD6E7;
@@ -42,51 +47,83 @@ strong {
 
 .main-banner {
     display: flex;
-    padding: 20px 50px;
-    background-color: var(--secundary-green);
-    width: 100vw;
+    padding: 30px 5%;
+    width: 100%;
+    gap: 20px;
+}
+@media screen and (max-width: 480px) {
+    .main-banner {
+        padding: 15px 5%;
+    }
 }
 .banner-title {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 55%;
 }
 .banner-title > h3 {
     font-size: 24px;
-    letter-spacing: 0.5rem;
+    font-weight: 400;
+    color: var(--primary-green);
+    margin-right: 10px;
 }
 .banner-icon {
     display: flex;
     justify-content: end;
-    width: 5%;
+    width: 45%;
 }
+.banner-icon > img {
+    width: 250px;
+}
+
 @media screen and (max-width: 768px) {
     .banner-title {
-        width: 80%;
+        width: 75%;
     }
-    .banner-icon {
-        width: 20%;
-        display: flex;
-        align-items: center;
+    .banner-title > h3 {
+        font-size: 18px;
     }
     .banner-icon > img {
-        width: 50px;
-        height: 50px;
+    width: 225px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .banner-title > h3 {
+        font-size: 14px;
+    }
+    .banner-icon > img {
+    width: 150px;
     }
 }
 .title-banner {
-    background-image: url('./img/header-banner.jpg');
-    min-height: 450px;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('./img/bg-hospital-italiano-wide.png');
+    background-size: cover;
+    min-height: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    width: 100vw;
+    width: 100%;
     padding: 50px 100px;
+    border-bottom-right-radius: 120px;
+}
+@media screen and (max-width: 480px) {
+    .title-banner {
+        min-height: 150px;
+        position: relative;
+        border-bottom-right-radius: 40px;
+    }
+    .title-group > h1 {
+        position: absolute;
+        left: 5%;
+        top: 20%;
+        font-size: 26px !important;
+        max-width: 200px;
+    }
 }
 .title-group {
-    max-width: 500px;
+    max-width: 750px;
 }
 .title-group > p {
     font-size: 2rem;
@@ -98,7 +135,7 @@ strong {
     line-height: 3.5rem;
     font-weight: 400;
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     .main-banner {
         padding: 20px 25px;
     }
@@ -116,14 +153,14 @@ strong {
     .title-group > h1 {
     font-size: 3rem;
 }
-}
+} */
 
 /* ------------------------- Main ------------------------- */
 
 main {
-    padding: 25px 100px;
+    padding: 25px 0 0 0;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     main {
         padding: 25px 50px;
     }
@@ -132,41 +169,81 @@ main {
     main {
         padding: 25px 10px;
     }
-}
+} */
 .current-date {
     display: flex;
     justify-content: end;
+    padding: 0 5%;
 }
-.info-section {
+.main-info-section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 1rem 5%;
 }
 
 
 /* ------------------------- Useful info ------------------------- */
 
-.useful-info {
-    margin: 50px 0;
+.useful-info-section {
+    margin: 50px 0 0;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+}
+@media screen and (max-width: 480px) {
+    .useful-info-section {
+        margin: 10px 0 0;
+    }
 }
 .info-title {
     background-color: var(--primary-green);
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+    padding: .5rem 5%;
+}
+@media screen and (max-width: 480px) {
+    .info-title > h3 {
+        font-size: 16px;
+    }
+}
+.info-title > h3 {
+    color: white;
 }
 .useful-info-wrapper{
     display: flex;
 }
+.emergency-phone-number {
+    font-size: 2rem;
+    color: red;
+}
+@media screen and (max-width: 480px) {
+    .emergency-phone-number {
+       font-size: 1.6rem;
+    }
+}
+
+.useful-numbers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .useful-numbers-container {
+       justify-content: start;
+    }
+}
+
+.useful-numbers-container > p {
+    width: 45%;
+    position: relative;
+}
+
 .portrait-wrapper{
-    width: 20%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 500px;
 }
 .portrait-img{
     object-fit: cover;
@@ -174,184 +251,311 @@ main {
     width: 100%;
 }
 .useful-info-group{
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 50px;
-    background-color: var(--secundary-green)
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 50px 5%;
+}
+@media screen and (800px <= width <= 940px) {
+    .useful-info-group {
+        padding: 20px 5% !important;
+        gap: 1rem;
+    }
 }
 @media screen and (max-width: 768px) {
     .useful-info-group {
-    padding: 15px;
+    padding: 15px 0 15px 5%;
+    gap: 1.5rem;
     }
 }
-.emergency-phone {
-    color: red;
+@media screen and (max-width: 480px) {
+    .useful-info-group {
+       padding: 15px 0 15px 5%; 
+    }
+}
+
+.phone-article {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 42%;
+    padding-right: 10px;
+}
+@media screen and (max-width: 480px) {
+    .phone-article {
+        gap: 0px;
+        width: 48%;
+    }
+}
+@media screen and (max-width: 380px) {
+    .phone-article {
+        width: 45%;
+    }
+    .patient-portal__title > div {
+        padding-right: 5px;
+    }
+    .patient-portal__title {
+        padding-right: 5px;
+    }
+}
+
+.recolor-green {
+    color: var(--primary-green);
+}
+
+.phone-number {
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 /* ------------------------- Patients portal ------------------------- */
 
 
-.recomendation-division {
-    background-color: var(--secundary-green);
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 5px;
-}
-@media screen and (max-width:768px) {
-    .recomendation-division{
-        padding: 25px 10px;
-        align-items: center;
-    }   
-}
-.recomendation-division > p {
-    text-align: center;
+.patients-portal-wrapper-first {
+    width: 100%;
+    padding: 25px 5%;
+    border-bottom: solid 1px var(--primary-green);
 }
 
-.article-description > p > a {
-    font-size: 16px;
-}
-.subdivision-divs {
+.patient-portal-article {
     display: flex;
     width: 100%;
-    row-gap: 5px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.subdivision-divs > div {
-    background-color: var(--primary-green);
-    width: calc(50% - 2.5px);
-    padding: 35px 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
-    height: 100px;
-}
-@media screen and (max-width: 768px) {
-    .subdivision-divs > div {
-        padding: 10px;
-    }
-}
-@media screen and (max-width: 400px) {
-    .subdivision-divs > div {
-        width: 100%;
-    }
 }
 
-.subdivision-divs > div:nth-child(2), .subdivision-divs > div:nth-child(3), .subdivision-divs > div:nth-child(6) {
-    background-color: var(--secundary-green);
-}
-
-/* ------------------------- Articles ------------------------- */
-
-
-.article-wrapper {
-    display: flex;
-    margin: 5px 0;
-    padding: 50px;
-    background-color: var(--secundary-green);
-}
-@media screen and (max-width: 768px) {
-    .article-wrapper {
-        padding: 25px 10px;
-    }
-}
 @media screen and (max-width: 480px) {
-    .article-wrapper {
-        flex-direction: column;
+    .patient-portal__title {
+        width: 65%;
     }
-    .article-group {
-        width: 100% !important;
-        align-items: center;
-        justify-content: center;
-        padding-right: 0 !important;
+    .patient-portal__button {
+        width: 35;
     }
-    .article-description {
-        width: 100% !important; 
-        align-items: center;
-        justify-content: center !important;
-        padding-right: 0 !important;
-        margin-top: 1rem;
+    .patient-portal__title > h3, .patient-portal__title > div > h3 {
+        font-size: 10px !important;
+        max-width: 200px ;
     }
-    .article-description > p {
-        padding: 0 10px;
+    .item-icon {
+        width: 30px !important;
     }
-}
-.article-wrapper:nth-child(odd) {
-    background-color: var(--primary-green);
-} 
+    .patient-portal__button > button {
+        width: 100px !important;
+        padding: 3px 5px !important;
+    }
+    .patient-portal__title > div > p {
+        font-size: 8px !important;
+        max-width: 180px !important;
+    }
 
-.article-group {
-    display: flex;
-    align-items: center;
+}
+
+.patient-portal__title-first, .patient-portal__title {
     width: 70%;
-    gap: 1rem;
-    padding-right: 50px;
 }
-.article-title {
-    max-width: 600px;
+
+@media screen and (max-width: 480px) {
+    .patient-portal__title-first > h4 {
+       font-size: 10px;
+    }
+    .patient-portal__title-first, .patient-portal__title {
+    width: 65%;
+    }
+    .patient-portal__button{
+    width: 35%;
+    }
 }
-.article-description {
+
+
+.patient-portal__title {
     display: flex;
     justify-content: start;
     align-items: center;
+}
+@media screen and (480px <= width <= 800px) {
+    * {
+        font-size: 14px;
+    }
+  .patient-portal__title {
+    width: 70%;
+  } 
+  .patient-portal__button {
     width: 30%;
+  } 
+  .patient-portal__button > button {
+    font-size: 12px !important;
+    width: 100% !important;
+    padding: 3px 5px !important;
+  } 
+  .patient-portal__title >  h3, .patient-portal__title >  div > h3 {
+    font-size: 12px !important;
+  }
+  .patient-portal__title >  div > p {
+    font-size: 10px !important;
+    max-width: 230px;
+    margin-right: 10px;
+  }
+  .patient-portal__title-first > h4, .patient-portal__title-first > div > h5 {
+    font-size: 12px !important;
+  }
+  .patient-portal__button-first > p {
+    font-size: 12px !important;
+  }
 }
-.article-description > p {
-    font-size: 16px;
+
+
+.patient-portal__button{
+    width: 25%;
 }
-.advise-section {
+
+
+
+.patient-portal-item {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+}
+
+.patient-portal__title-first >  h4 {
+    margin-bottom: 25px;
+}
+
+.patient-portal__title >  h3, .patient-portal__title >  div > h3 {
+    font-size: 22px;
+}
+@media screen and (800px <= width <= 880px) {
+   .patient-portal__title >  h3, .patient-portal__title >  div > h3 {
+    font-size: 18px !important;
+    } 
+}
+
+.patient-portal__title >  div > p {
+    font-size: 18px;
+    max-width: 550px;
+    padding-right: 15px;
+}
+
+.patient-portal-item > h5{
+    font-weight: 300;
+}
+
+.patient-portal__button-first {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0 25px;
+    justify-content: end;
+    width: 30%;
 }
-.advise-section > p {
+
+@media screen and (max-width: 480px) {
+    .patient-portal__button-first {
+       width: 35%;
+    }
+    .patient-portal__button-first > p {
+        font-size: 8px;
+        margin-top: 10px !important;
+    }
+    .patient-portal__button-first > strong{
+        font-size: 8px;
+    }
+
+}
+
+.patient-portal__button-first > button, .patient-portal__button > button {
+    all: unset;
+    color: var(--primary-green);
+    border: solid 1px var(--primary-green);
+    border-radius: 5px;
+    padding: 5px 20px;
+    width: fit-content;
+}
+
+.patient-portal__button > button {
+    width: 195px;
     text-align: center;
 }
 
-/* ------------------------- Payment ------------------------- */
-
-.payment-methods {
-    margin: 50px 0;
+.patient-portal__button-first > p, .patient-portal__button > p {
+    color: var(--primary-green);
+    margin-top: 25px;
+    max-width: 250px;
 }
 
-.payment-variant {
-    background-color: var(--primary-blue);
+.patient-portal__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
 }
-.payment-variant > h3 {
-    color: #f5f1f1;
+
+.patients-portal-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 25px 5%;
+    border-bottom: solid 1px var(--primary-green);
+    height: 125px;
+    display: flex;
+    align-items: center;
 }
-.payment-sub-variant {
-    background-color: var(--secundary-blue);
+@media screen and (max-width: 480px) {
+    .patients-portal-wrapper {
+        height: 80px;
+    }
+}
+
+.item-icon {
+    width: 50px;
+    margin-right: 10px;
 }
 
 /* ------------------------- Footer ------------------------- */
 
-.advise-section {
-    margin: 0 10% 50px;
-
-}
-.footer-banner-wrapper {
+.footer-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    padding: 40px 5%;
+    gap: 1rem;
     align-items: center;
-    margin: 50px auto 0;
-    max-width: 507px;
 }
-.footer-banner-wrapper > img {
-    width: 100%;
-}
-.footer-banner-msg {
-    letter-spacing: 5px;
-    font-size: 12px;
-    font-weight: 600;
+@media screen and (max-width: 480px) {
+    .footer-wrapper {
+        padding: 30px 5%;
+    }
 }
 
+.footer-wrapper > span {
+    text-align: center;
+}
+.footer-wrapper > p {
+    max-width: 750px;
+    text-align: center;
+}
+
+.footer-slogan {
+    width: 100%;
+    display: flex;
+}
+.footer-slogan > span {
+    padding: 1rem 1rem 1rem 5%;
+    background-color: var(--primary-green);
+    color: white;
+    width: 450px;
+    border-top-right-radius: 10px;
+}
+@media screen and (max-width: 480px) {
+    .footer-slogan > span {
+        width: fit-content; 
+        padding: 1rem 1.5rem 1rem 5%;
+    }
+}
+
+.icon-arrows {
+    width: 20px;
+    height: 15px;
+}
+@media screen and (max-width: 480px) {
+    .icon-arrows {
+    width: 10px;
+    height: 8px;
+}
+}
 
 
