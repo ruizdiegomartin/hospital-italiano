@@ -42,6 +42,13 @@ strong {
     font-weight: bold;
     font-size: 20px;
 }
+/* Font sizes */
+.r-w {
+    font-weight: 400;
+}
+.sb-w {
+    font-weight: 600;
+}
 
 /* ------------------------- Top banner ------------------------- */
 
@@ -62,7 +69,7 @@ strong {
     width: 55%;
 }
 .banner-title > h3 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 400;
     color: var(--primary-green);
     margin-right: 10px;
@@ -95,7 +102,8 @@ strong {
     width: 150px;
     }
 }
-.title-banner {
+/* .title-banner{
+    position: relative;
     overflow: hidden;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('./img/bg-hospital-italiano-wide.png');
     background-size: cover;
@@ -105,35 +113,76 @@ strong {
     justify-content: center;
     align-items: start;
     width: 100%;
-    padding: 50px 100px;
-    border-bottom-right-radius: 120px;
+    
+} */
+
+.title-banner {
+  position: relative; 
+  background-image: url('./img/bg-hospital-italiano-wide.png'); /* La imagen de fondo del contenedor */
+  background-size: cover; 
+  background-position: center; 
+  width: 100%; 
+  min-height: 375px; 
+  padding: 50px 100px;
+    border-bottom-right-radius: 80px;
 }
+
+.title-banner::before {
+  content: ''; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1; 
+  border-bottom-right-radius: 80px;
+}
+@media screen and (480px <= width <= 800px) {
+    .title-group > h1 {
+        max-width: 400px !important;
+    }
+    .title-banner {
+        min-height: 280px;
+        border-bottom-right-radius: 60px;
+    }
+}
+
+
 @media screen and (max-width: 480px) {
     .title-banner {
-        min-height: 150px;
+        min-height: 180px;
         position: relative;
-        border-bottom-right-radius: 40px;
+        border-bottom-right-radius: 30px;
     }
     .title-group > h1 {
         position: absolute;
         left: 5%;
-        top: 20%;
+        top: 10%;
         font-size: 26px !important;
-        max-width: 200px;
+        max-width: 50% !important;
     }
 }
 .title-group {
-    max-width: 750px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 .title-group > p {
     font-size: 2rem;
     color: white;
 }
 .title-group > h1 {
-    font-size: 4rem;
+    position: absolute;
+    left: 7%;
+    top: 20%;
+    max-width: 600px;
+    font-size: 3.2rem;
     color: white;
     line-height: 3.5rem;
-    font-weight: 400;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px #000;
+    z-index: 1;
 }
 /* @media screen and (max-width: 480px) {
     .main-banner {
@@ -181,6 +230,9 @@ main {
     gap: 1rem;
     padding: 1rem 5%;
 }
+.main-info-section > p, .main-info-section > div > p {
+    font-weight: 400;
+}
 
 
 /* ------------------------- Useful info ------------------------- */
@@ -212,7 +264,8 @@ main {
 }
 .emergency-phone-number {
     font-size: 2rem;
-    color: red;
+    color: #EE4746;
+    font-weight: 400;
 }
 @media screen and (max-width: 480px) {
     .emergency-phone-number {
@@ -283,6 +336,9 @@ main {
     width: 42%;
     padding-right: 10px;
 }
+.phone-article > div > p > span {
+    font-weight: 400;
+}
 @media screen and (max-width: 480px) {
     .phone-article {
         gap: 0px;
@@ -307,7 +363,7 @@ main {
 
 .phone-number {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* ------------------------- Patients portal ------------------------- */
@@ -371,6 +427,7 @@ main {
     justify-content: start;
     align-items: center;
 }
+
 @media screen and (480px <= width <= 800px) {
     * {
         font-size: 14px;
@@ -386,6 +443,11 @@ main {
     width: 100% !important;
     padding: 3px 5px !important;
   } 
+  .patient-portal__button-first > button{
+    font-size: 12px !important;
+    width: fit-content !important;
+    padding: 5px 12px !important;
+  }
   .patient-portal__title >  h3, .patient-portal__title >  div > h3 {
     font-size: 12px !important;
   }
@@ -432,10 +494,11 @@ main {
     font-size: 18px;
     max-width: 550px;
     padding-right: 15px;
+    font-weight: 400;
 }
 
 .patient-portal-item > h5{
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .patient-portal__button-first {
@@ -450,11 +513,11 @@ main {
        width: 35%;
     }
     .patient-portal__button-first > p {
-        font-size: 8px;
+        font-size: 8px !important;
         margin-top: 10px !important;
     }
-    .patient-portal__button-first > strong{
-        font-size: 8px;
+    .patient-portal__button-first > p > span {
+        font-size: 8px !important;
     }
 
 }
@@ -463,9 +526,17 @@ main {
     all: unset;
     color: var(--primary-green);
     border: solid 1px var(--primary-green);
-    border-radius: 5px;
-    padding: 5px 20px;
+    border-radius: 10px;
+    padding: 6px 20px;
     width: fit-content;
+    font-weight: 500;
+    box-shadow: 2px 2px 5px 0px #c7c5c5;
+}
+@media screen and (min-width: 480px) {
+.patient-portal__button-first > button {
+    padding: 8px 30px;
+    font-size: 24px;
+}
 }
 
 .patient-portal__button > button {
@@ -477,8 +548,23 @@ main {
     color: var(--primary-green);
     margin-top: 25px;
     max-width: 250px;
+    font-weight: 400;
+}
+@media screen and (max-width: 800px) {
+    .patient-portal__button-first > p {
+        margin-top: 10px;
+    }
+}
+.patient-portal__button-first > p {
+    font-size: 16px;
+    max-width: 200px;
+    text-shadow: 2px 2px 8px #00000013;
 }
 
+.patient-portal__button-first > p > span {
+    font-weight: 500;
+    font-size: 16px;
+}
 .patient-portal__button {
     display: flex;
     flex-direction: column;
@@ -519,14 +605,20 @@ main {
     .footer-wrapper {
         padding: 30px 5%;
     }
+    .footer-wrapper > span {
+        font-size: 18px !important;
+    }
 }
 
 .footer-wrapper > span {
     text-align: center;
+    font-weight: 700;
+    font-size: 22px;
 }
 .footer-wrapper > p {
-    max-width: 750px;
+    max-width: 780px;
     text-align: center;
+    font-weight: 400;
 }
 
 .footer-slogan {
