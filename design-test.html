@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Plan de Salud - Hospital Italiano</title>
+
+  <!-- Estilos globales y media queries -->
+  <style>
+    /* Estilos globales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Fira Sans", sans-serif;
+      font-size: 12px;
+      color: #000000dc;
+    }
+  </style>
+</head>
+
+<body style="background-color:#ffffff; max-width: 600px; display: flex; flex-direction: column; justify-content: center;line-height:1.25; margin:0 auto; padding:0;">
+
+  <!-- INICIO HEADER -->
+  <header role="banner" style="width:100%; display:block;">
+
+    <!-- Main banner -->
+    <div class="main-banner" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:25px 7.5%; box-sizing:border-box;">
+      <div class="banner-title" style="width:55%;">
+        <h3 style="color:#00913D; font-size:20px; font-weight:400;">Información Importante</h3>
+      </div>
+      <div class="banner-icon" style="width:45%; display:flex; justify-content:flex-end;">
+        <img src="./img/logo-plan-salud.png" alt="Hospital Italiano" style="width:180px; height:auto; display:block;">
+      </div>
+    </div>
+
+    <!-- Banner con título -->
+    <div class="title-banner" style="background-image:url('./img/bg-hospital-italiano-wide.png'); background-size:cover; background-position:center; width:100%; min-height:215px; border-bottom-right-radius:40px; padding:7.5%; position:relative; box-sizing:border-box;">
+      <div class="overlay" style="background-color:rgba(0,0,0,0.2); position:absolute; top:0; left:0; right:0; bottom:0; border-bottom-right-radius:40px;"></div>
+      <div class="title-group" style="position:relative; z-index:2;">
+        <h1 style="color:#ffffff; font-size:3rem; max-width:60%; line-height:3rem; font-weight:500; position:absolute; left:0; top:20%; text-shadow:2px 2px 8px rgba(0,0,0,0.6);">Bienvenidos al Hospital Italiano</h1>
+      </div>
+    </div>
+
+  </header>
+  <!-- FIN HEADER -->
+
+    <!-- INICIO MAIN -->
+  <main role="main" style="display:block; width:100%; box-sizing:border-box; padding:25px 0 0 0;">
+
+    <!-- Fecha actual -->
+    <div style="width:100%; display:flex; justify-content:flex-end; padding:0 7.5%; box-sizing:border-box;">
+      <p id="dateLine" style="font-weight:400; font-size:12px; color:#000000dc; margin:0;">
+        Buenos Aires, <span id="dateDay">#dd#</span> de <span id="dateMonth">#mmm#</span> de <span id="dateYear">#yyyy#</span>
+      </p>
+    </div>
+
+    <!-- main-info-section -->
+    <section class="main-info-section" style="padding:1rem 7.5%; box-sizing:border-box;">
+      <div style="margin-bottom:20px;">
+        <p style="margin-bottom:2px; font-weight:400;">
+          <strong style="font-weight:600;">Hola <span id="clientName">#nombre#</span></strong> | AFILIADO/A Nº <span id="clientNumber">#número afiliado#</span>
+        </p>
+        <p style="margin-bottom:2px; font-weight:400;">
+          <strong style="font-weight:600;">Plan:</strong> <span id="planNumber">XXX</span>
+        </p>
+        <p style="margin-bottom:2px; font-weight:400;">
+          <strong style="font-weight:600;">Forma de Pago:</strong> <span id="paymentMethod">Tarjeta - XXXX</span>
+        </p>
+      </div>
+
+      <div style="margin-top:6px;">
+        <p style="margin-bottom:8px; font-weight:400;">
+          Queremos darte la bienvenida a nuestra institución como afiliado/a del
+          <strong style="font-weight:600; color:#00913D;">Plan de Salud del Hospital Italiano.</strong>
+        </p>
+        <p style="margin-bottom:8px; font-weight:400;">
+          Tu cobertura tiene vigencia a partir del día
+          <strong style="font-weight:600;"><span id="startDate">#fecha_inicio_cobertura#</span></strong>
+        </p>
+        <p style="margin-bottom:8px; font-weight:600;">
+          A continuación, te acercamos información que consideramos puede ser de gran utilidad:
+        </p>
+        <p style="margin-bottom:8px; font-weight:400;">
+          Para tu facilidad, te enviamos adjunta tu credencial en este e-mail. De todas maneras, podés acceder desde tu celular descargando la App del Portal de Pacientes y accediendo en la parte inferior a
+          <strong style="font-weight:600;">“Credencial”</strong>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+  <!-- FIN MAIN -->
+
+    <!-- INICIO SECCIÓN NÚMEROS ÚTILES -->
+  <section aria-labelledby="numeros-utiles" style="display:block; width:100%; box-sizing:border-box;">
+
+    <!-- Título -->
+    <div style="background-color:#00913D; padding:0.5rem 7.5%; box-sizing:border-box;">
+      <h3 id="numeros-utiles" style="margin:0; color:#ffffff; font-size:18px;">Números útiles</h3>
+    </div>
+
+    <!-- Contenido -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+
+      <!-- Columna izquierda -->
+      <div style="width:65%; padding:25px 5% 25px 7.5%; box-sizing:border-box;">
+        <p style="margin:0 0 18px 0; font-size:1.6rem; color:#EE4746; font-weight:400;">
+          Servicio de Emergencias: 4959-5000
+        </p>
+
+        <!-- Listado de números -->
+        <div style="display:flex; gap:2rem;">
+
+          <!-- Columna 1 -->
+          <div style="display:flex; flex-direction: column; min-width:45%;">
+            <!-- Central de turnos -->
+            <div style="display:flex; align-items:flex-start; margin-bottom:12px;">
+              <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px; margin-top:2px;">
+              <div>
+                <p style="margin:0;">
+                  <strong style="font-weight:600;">Central de turnos:</strong><br>
+                  <span style="display:block; color:#00913D; font-size:1.5rem;">4959-0550</span>
+                  <span style="display:block; font-style:italic;">Lunes a viernes de 7:30 a 21 hs. Sábados de 8 a 14 hs.</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Farmacias -->
+            <div style="display:flex; align-items:flex-start; margin-bottom:12px;">
+              <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px; margin-top:2px;">
+              <div>
+                <p style="margin:0;">
+                  <strong style="font-weight:600;">Farmacias Plan de Salud,</strong>
+                  <span style="font-weight:400;"> envíos a domicilio:</span><br>
+                  <span style="display:block; color:#00913D; font-size:1.5rem;">4959-0474</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2 -->
+          <div style="display:flex; flex-direction: column; justify-content: space-between; min-width:45%;">
+            <!-- Atención al afiliado -->
+            <div style="display:flex; align-items:flex-start; margin-bottom:12px;">
+              <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px; margin-top:2px;">
+              <div>
+                <p style="margin:0;">
+                  <strong style="font-weight:600;">Centro de atención al afiliado:</strong><br>
+                  <span style="display:block; color:#00913D; font-size:1.5rem;">4959-0555</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Asistencia al viajero -->
+            <div style="display:flex; align-items:flex-start; margin-bottom:12px;">
+              <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px; margin-top:2px;">
+              <div>
+                <p style="margin:0;">
+                  <strong style="font-weight:600;">Asistencia al viajero:</strong><br>
+                  <span style="display:block; color:#00913D; font-size:1.5rem;">0800-999-6400</span>
+                  <span style="display:block; color:#00913D; font-size:1.5rem;">4323-7777</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Columna derecha (imagen) -->
+      <div style="width:35%; box-sizing:border-box; display:flex; justify-content:center; align-items:center;">
+        <img src="./img/worker-woman-portrait.jpg" alt="Médica sonriendo" style="max-width:100%; height:auto; display:block;">
+      </div>
+
+    </div>
+  </section>
+  <!-- FIN SECCIÓN NÚMEROS ÚTILES -->
+
+    <!-- INICIO PORTAL DE PACIENTES -->
+  <section aria-labelledby="portal-pacientes" style="display:block; width:100%; box-sizing:border-box">
+
+    <!-- Título -->
+    <div style="background-color:#00913D; padding:0.5rem 7.5%; box-sizing:border-box;">
+      <h3 id="portal-pacientes" style="margin:0; color:#ffffff; font-size:18px;">Portal de Pacientes</h3>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div style="display:flex; justify-content:space-between; padding:25px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+
+      <!-- Columna izquierda -->
+      <div style="flex:1 1 75%;">
+        <h4 style="margin:0 0 12px 0; font-size:14px; font-weight:600; max-width: 82%;">
+          Te recordamos las múltiples funcionalidades de tu <span style="color:#00913D; font-weight:600; font-size: 14px;">Portal de Pacientes.</span>
+        </h4>
+
+        <ul style="list-style:none; padding:0; margin-top:12px;">
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Reservar turnos</span>
+          </li>
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Visualizar tus estudios</span>
+          </li>
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Comprar medicamentos</span>
+          </li>
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Visualizar y abonar tus facturas</span>
+          </li>
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Acceder a Teleconsultas</span>
+          </li>
+          <li style="display:flex; align-items:center; margin-bottom:2px;">
+            <img src="./img/icon-arrows.png" alt="" style="width:10px; height:auto; margin-right:2.5px;">
+            <span>Consultar dudas por Chat</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha -->
+      <div style="flex:1 1 140px; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end;">
+        <a href="#" style="text-decoration:none;">
+          <button style="display:inline-block; font-size: 13px; background-color: white;padding:4px 16px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+            Acceder
+          </button>
+        </a>
+        <p style="margin-top:12px; color:#00913D; font-size:10px; max-width:120px; font-weight:400; text-shadow:2px 2px 8px rgba(0,0,0,0.08);">
+          Disponible para descarga en <strong style="color:#00913D; font-size:10px;">Play Store</strong> y <strong style="color:#00913D; font-size:10px;">App Store</strong>.<br>
+          Accedé fácilmente desde tu dispositivo móvil.
+        </p>
+      </div>
+
+    </div>
+  </section>
+  <!-- FIN PORTAL DE PACIENTES -->
+
+    <!-- INICIO BLOQUES PORTAL DE PACIENTES -->
+
+  <!-- INICIO: Realizar Gestiones Administrativas -->
+  <section style="display:flex; min-height: 85px; justify-content:space-between; align-items:center; padding:10px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; flex:1 1 75%;">
+      <img src="./img/icon-worker.png" alt="Icono empleada administrativa" style="width:30px; height:auto; margin-right:10px;">
+      <h4 style="font-size:12px; font-weight:600; margin:0;">Realizar Gestiones Administrativas</h4>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          ¿Dudas? Accedé aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Realizar Gestiones Administrativas -->
+
+  <!-- INICIO: Acceder a la Credencial Electrónica -->
+  <section style="display:flex; min-height: 85px; justify-content:space-between; align-items:center; padding:10px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; flex:1 1 75%;">
+      <img src="./img/icon-mobile.png" alt="Icono teléfono" style="width:30px; height:auto; margin-right:10px;">
+      <div style="max-width:70%;">
+        <h4 style="font-size:12px; font-weight:600; margin:0 0 2px 0;">Acceder a la Credencial Electrónica:</h4>
+        <p style="font-size:12px; margin:0;">Obtenela en el documento adjunto o en la APP del Portal.</p>
+      </div>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          ¿Dudas? Accedé aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Acceder a la Credencial Electrónica -->
+
+  <!-- INICIO: Información Sobre Nuestros Centros Médicos -->
+  <section style="display:flex; min-height: 85px; justify-content:space-between; align-items:center; padding:10px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; flex:1 1 75%;">
+      <img src="./img/icon-hospital.png" alt="Icono Hospital" style="width:30px; height:auto; margin-right:10px;">
+      <h4 style="font-size:12px; font-weight:600; margin:0;">Información Sobre Nuestros Centros Médicos</h4>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          + Información aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Información Sobre Nuestros Centros Médicos -->
+
+  <!-- INICIO: Contactar a tu Médico de Cabecera -->
+  <section style="display:flex; min-height: 85px; justify-content:space-between; align-items:center; padding:10px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; flex:1 1 75%;">
+      <img src="./img/icon-medic.png" alt="Icono médico" style="width:30px; height:auto; margin-right:10px;">
+      <div>
+        <h4 style="font-size:12px; font-weight:600; margin:0 0 2px 0;">Contactar a tu Médico de Cabecera</h4>
+        <p style="font-size:12px; margin:0; max-width: 85%;">
+          Una vez que asistas a tu primera consulta, contactá a tu Médico/a de Cabecera quien se convertirá en el principal referente del cuidado de tu salud.
+        </p>
+      </div>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          Contactar aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Contactar a tu Médico de Cabecera -->
+
+  <!-- INICIO: Atención no Programada -->
+  <section style="display:flex; min-height: 85px; justify-content:space-between; align-items:center; padding:10px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="display:flex; align-items:center; flex:1 1 75%;">
+      <img src="./img/icon-cruz.png" alt="Icono medicina" style="width:30px; height:auto; margin-right:10px;">
+      <div>
+        <h4 style="font-size:12px; font-weight:600; margin:0 0 2px 0;">Atención no Programada (sin turno)</h4>
+        <p style="font-size:12px; margin:0; max-width: 85%;">
+          Conocé horarios, modalidad de atención y centros donde podés consultar de manera espontánea.
+        </p>
+      </div>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          + Información aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Atención no Programada -->
+
+  <!-- INICIO: Medios de Pago -->
+  <div style="background-color:#00913D; padding:0.5rem 7.5%; box-sizing:border-box;">
+    <h3 style="color:#ffffff; margin:0; font-size:18px; font-weight: 600;">Medios de Pago</h3>
+  </div>
+  <section style="display:flex; justify-content:space-between; align-items:center; padding:25px 7.5%; border-bottom:1px solid #00913D; box-sizing:border-box;">
+    <div style="flex:1 1 75%;">
+      <h4 style="font-size:14px; font-weight:600; margin:0;">Para conocer las distintas alternativas de pago</h4>
+    </div>
+    <div style="flex:1 1 25%;">
+      <a href="#" style="text-decoration:none;">
+        <button style="display:inline-block; background-color: white;width:140px; text-align:center; padding:4px 10px; border:1px solid #00913D; border-radius:5px; color:#00913D; font-weight:500; box-shadow:2px 2px 5px rgba(199,197,197,0.8);">
+          + Información aquí
+        </button>
+      </a>
+    </div>
+  </section>
+  <!-- FIN: Medios de Pago -->
+
+  <!-- FIN BLOQUES PORTAL DE PACIENTES -->
+
+    <!-- INICIO FOOTER -->
+  <footer role="contentinfo" style="display:block; width:100%; box-sizing:border-box; padding:40px 7.5% 20px 7.5%; background-color:#ffffff;">
+
+    <div style="text-align:center; padding-bottom:12px;">
+      <span style="display:block; font-weight:700; font-size:14px; margin:0 0 10px 0;">
+        ¡Es muy importante que mantengas tus datos de contacto actualizados!
+      </span>
+      <p style="max-width:780px; margin:0 auto; font-weight:400;">
+        Podés realizarlo ingresando a la sección “Perfil” en el Portal de Pacientes, opción que encontrarás en el extremo derecho al cliquear sobre tu dirección de e-mail.
+      </p>
+    </div>
+
+    <div style="text-align:left; padding-top:18px; position: relative;">
+      <div style="display:inline-block; position:absolute; bottom:-50px; left:-9%; padding: 1rem 1rem 1rem 7.5%; background-color:#00913D; color:#ffffff; font-size: 16px;width:60%; border-top-right-radius:10px;">
+        Movemos los límites de lo posible.
+      </div>
+    </div>
+
+  </footer>
+  <!-- FIN FOOTER -->
+
+</body>
+</html>
